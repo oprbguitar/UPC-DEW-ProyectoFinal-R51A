@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ti_persona: 1
+  prenombre: MyString
+  ap_paterno: MyString
+  ap_materno: MyString
+  sexo: 1
+  ti_doc_ident: 1
+  nu_doc_ident: MyString
+  email: MyString
+
+two:
+  ti_persona: 1
+  prenombre: MyString
+  ap_paterno: MyString
+  ap_materno: MyString
+  sexo: 1
+  ti_doc_ident: 1
+  nu_doc_ident: MyString
+  email: MyString

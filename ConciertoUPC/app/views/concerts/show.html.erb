@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Hora ini:</b>
+  <%= @concert.hora_ini %>
+</p>
+
+<p>
+  <b>Hora fin:</b>
+  <%= @concert.hora_fin %>
+</p>
+
+
+<%= link_to 'Edit', edit_concert_path(@concert) %> |
+<%= link_to 'Back', concerts_path %>

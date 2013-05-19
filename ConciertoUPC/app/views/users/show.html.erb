@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ti persona:</b>
+  <%= @user.ti_persona %>
+</p>
+
+<p>
+  <b>Prenombre:</b>
+  <%= @user.prenombre %>
+</p>
+
+<p>
+  <b>Ap paterno:</b>
+  <%= @user.ap_paterno %>
+</p>
+
+<p>
+  <b>Ap materno:</b>
+  <%= @user.ap_materno %>
+</p>
+
+<p>
+  <b>Sexo:</b>
+  <%= @user.sexo %>
+</p>
+
+<p>
+  <b>Ti doc ident:</b>
+  <%= @user.ti_doc_ident %>
+</p>
+
+<p>
+  <b>Nu doc ident:</b>
+  <%= @user.nu_doc_ident %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
