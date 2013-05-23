@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  <b>Di google maps:</b>
+  <b>Direccion Google:</b>
   <%= @local.di_google_maps %>
 </p>
 
@@ -25,6 +25,9 @@
   <%= @local.telefono %>
 </p>
 
+<p>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x450&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
+</p>
 
 <%= link_to 'Edit', edit_local_path(@local) %> |
 <%= link_to 'Back', locals_path %>
