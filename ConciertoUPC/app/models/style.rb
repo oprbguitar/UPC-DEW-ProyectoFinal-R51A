@@ -1,3 +1,3 @@
 class Style < ActiveRecord::Base
-  attr_accessible :descripccion
+  belongs_to :band
 end

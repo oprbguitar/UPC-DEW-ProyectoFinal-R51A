@@ -1,6 +1,15 @@
-<h1>Listing concerts</h1>
 
-<table class="table table-striped">
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>CONCIERTOS</span>
+</div>
+
+<div class="ui-panel-body">
+
+<h1>Lista de Conciertos</h1>
+
+<table>
   <tr>
     <th>Hora ini</th>
     <th>Hora fin</th>
@@ -13,13 +22,30 @@
   <tr>
     <td><%= concert.hora_ini %></td>
     <td><%= concert.hora_fin %></td>
-    <td><%= link_to 'Show', concert %></td>
-    <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-    <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+    <td>
+            <%= button_to "Consultar", concert, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+            <%= button_to "Editar", edit_concert_path(concert) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+          
+            <%= button_to "Eliminar", concert , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+        </td>
+
+    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Concert', new_concert_path %>
+<div class="actions">
+
+  <%= button_to "Nuevo", new_concert_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>
+
+</div>

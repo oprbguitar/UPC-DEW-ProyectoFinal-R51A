@@ -1,11 +1,21 @@
-<h1>Listing locals</h1>
 
-<table class="table table-striped">
+
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>LOCALES</span>
+</div>
+
+<div class="ui-panel-body">
+
+<h1>Listar Locales</h1>
+
+<table>
   <tr>
     <th>Nombre</th>
     <th>Direccion</th>
     <th>Distrito</th>
-    <th>Direccion Google</th>
+    <th>Di google maps</th>
     <th>Telefono</th>
     <th></th>
     <th></th>
@@ -16,16 +26,32 @@
   <tr>
     <td><%= local.nombre %></td>
     <td><%= local.direccion %></td>
-    <td><%= local.distrito %></td>
+    <td><%= local.districts.name %></td>
     <td><%= local.di_google_maps %></td>
     <td><%= local.telefono %></td>
-    <td><%= link_to 'Show', local %></td>
-    <td><%= link_to 'Edit', edit_local_path(local) %></td>
-    <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td>
+            <%= button_to "Consultar", local, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+            <%= button_to "Editar", edit_local_path(local) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+          
+            <%= button_to "Eliminar", local , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+        </td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Local', new_local_path %>
+<div class="actions">
+
+  <%= button_to "Nuevo", new_local_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>
+
+</div>

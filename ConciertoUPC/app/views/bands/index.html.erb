@@ -1,23 +1,47 @@
-<h1>Listing bands</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>Nombre</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
 
-<% @bands.each do |band| %>
-  <tr>
-    <td><%= band.nombre %></td>
-    <td><%= link_to 'Show', band %></td>
-    <td><%= link_to 'Edit', edit_band_path(band) %></td>
-    <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>BANDAS MUSICALES</span>
+</div>
 
-<br />
+<div class="ui-panel-body">
 
-<%= link_to 'New Band', new_band_path %>
+    <h1>Lista de Bandas</h1>
+
+    <table>
+      <tr>
+        <th>Nombre</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @bands.each do |band| %>
+      <tr>
+        <td><%= band.nombre %></td>
+
+        <td>
+            <%= button_to "Consultar", band, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+            <%= button_to "Editar", edit_band_path(band) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+        </td>
+        <td>
+          
+            <%= button_to "Eliminar", band , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+        </td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+</div>
+
+<div class="actions">
+
+  <%= button_to "Nuevo", new_band_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>

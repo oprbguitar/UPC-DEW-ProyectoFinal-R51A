@@ -1,3 +1,13 @@
+
+
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>CONCIERTOS</span>
+</div>
+
+<div class="ui-panel-body">
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,6 +20,17 @@
   <%= @concert.hora_fin %>
 </p>
 
+<div class="actions">
+	<table align = "center">
+		<tr>
+			<td>
+				<%= button_to "Editar", edit_concert_path(@concert), :class => "ui-button ui-widget ui-state-default", :method => :get %>		
+			</td>
+			<td>
+				<%= button_to "Atrás", concerts_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+			</td>
+		</tr>
+	</table>	
+</div>
 
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
-<%= link_to 'Back', concerts_path %>
+</div>

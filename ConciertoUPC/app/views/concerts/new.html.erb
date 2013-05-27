@@ -1,5 +1,21 @@
-<h1>New concert</h1>
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>CONCIERTOS</span>
+</div>
+
+<div class="ui-panel-body">
+
+<h1>Nuevo Concierto</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', concerts_path %>
+	<table align = "center">
+		<tr>
+			<td>
+				<%= button_to "Atrás", concerts_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+			</td>
+		</tr>
+	</table>	
+	
+</div>

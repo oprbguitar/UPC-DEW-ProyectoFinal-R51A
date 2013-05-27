@@ -20,14 +20,16 @@
     <%= f.text_field :direccion %>
   </div>
   <div class="field">
-    <%= f.label :distrito %><br />
-    <%= f.text_field :distrito %>
+    <%= f.label :district %><br />
+    <%= f.collection_select :district_id,
+		District.all, :id, :nombre, :prompt => true %>
   </div>
+
   <div class="field">
     <%= f.label :di_google_maps %><br />
     <%= f.text_field :di_google_maps %>
   </div>
-  <div class="field">
+   <div class="field">
     <%= f.label :latitude %><br />
     <%= f.text_field :latitude %>
   </div>

@@ -1,3 +1,4 @@
 class Concert < ActiveRecord::Base
-  attr_accessible :hora_fin, :hora_ini
+  has_many :locals
+  has_many :bands
 end

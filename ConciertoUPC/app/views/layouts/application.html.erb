@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ConciertoUPC</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Conciertos - UPC</title>
+  <%= stylesheet_link_tag    "default", :media => "all" %>
+  <%= stylesheet_link_tag    "custom-theme/skin", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<nav class='navbar'>
        <div class='navbar-inner'>
        	<ul class='nav'>
-           <li><%= link_to 'Inicio', root_path %></li>
            <li><%= link_to 'Bands', bands_path %></li>
            <li><%= link_to 'Concerts', concerts_path %></li>
            <li><%= link_to 'Locals', locals_path %></li>

@@ -1,6 +1,29 @@
-<h1>Editing band</h1>
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
 
-<%= render 'form' %>
+	<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+	    <span>BANDAS MUSICALES</span>
+	</div>
 
-<%= link_to 'Show', @band %> |
-<%= link_to 'Back', bands_path %>
+	<div class="ui-panel-body">
+
+		<h1>Editar Banda</h1>
+
+		<%= render 'form' %>
+
+
+		<div class="actions">
+			<table align = "center">
+				<tr>
+					<td>
+						<%= button_to "Visualizar", @band, :class => "ui-button ui-widget ui-state-default", :method => :get %>		
+					</td>
+					<td>
+						<%= button_to "Atrás", bands_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+					</td>
+				</tr>
+			</table>	
+		</div>
+	
+	</div>
+
+</div>

@@ -1,3 +1,4 @@
 class Band < ActiveRecord::Base
-  attr_accessible :nombre
+  has_many :styles
+  belongs_to :concert
 end

@@ -1,3 +1,14 @@
+
+
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>LOCALES</span>
+</div>
+
+<div class="ui-panel-body">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -12,11 +23,11 @@
 
 <p>
   <b>Distrito:</b>
-  <%= @local.distrito %>
+  <%= @local.districts.name %>
 </p>
 
 <p>
-  <b>Direccion Google:</b>
+  <b>Di google maps:</b>
   <%= @local.di_google_maps %>
 </p>
 
@@ -29,5 +40,16 @@
   <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x450&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
 </p>
 
-<%= link_to 'Edit', edit_local_path(@local) %> |
-<%= link_to 'Back', locals_path %>
+
+  <table align = "center">
+    <tr>
+      <td>
+        <%= button_to "Editar", edit_local_path(@local), :class => "ui-button ui-widget ui-state-default", :method => :get %>   
+      </td>
+      <td>
+        <%= button_to "Atrás", locals_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+      </td>
+    </tr>
+  </table>  
+
+</div>

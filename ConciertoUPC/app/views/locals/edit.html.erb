@@ -1,6 +1,29 @@
-<h1>Editing local</h1>
+
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>LOCALES</span>
+</div>
+
+<div class="ui-panel-body">
+
+<h1>Editar Local</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @local %> |
-<%= link_to 'Back', locals_path %>
+
+		<div class="actions">
+			<table align = "center">
+				<tr>
+					<td>
+						<%= button_to "Visualizar", @local, :class => "ui-button ui-widget ui-state-default", :method => :get %>		
+					</td>
+					<td>
+						<%= button_to "Atrás", locals_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+					</td>
+				</tr>
+			</table>	
+		</div>
+
+
+</div>

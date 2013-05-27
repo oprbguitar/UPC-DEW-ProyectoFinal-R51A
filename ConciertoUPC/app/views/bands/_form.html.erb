@@ -1,3 +1,5 @@
+
+
 <%= form_for(@band) do |f| %>
   <% if @band.errors.any? %>
     <div id="error_explanation">
@@ -11,13 +13,18 @@
     </div>
   <% end %>
 
-  
-    <div class="field">
-     <%= f.label :nombre %><br />
-     <%= f.text_field :nombre %>
-    </div>
-
-  <div class="actions">
-    <%= f.submit 'Register', class: 'button'%>
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
   </div>
+  <div class="field">
+    <%= f.label :style %><br />
+    <%= f.collection_select :style_id,
+		Style.all, :id, :nombre, :prompt => true %>
+  </div>
+
+  
+    <%= button_to "Grabar", :class => "ui-button ui-widget ui-state-default", :method => :get , :form => { "data-type" => "json" }  %>
+        
+
 <% end %>

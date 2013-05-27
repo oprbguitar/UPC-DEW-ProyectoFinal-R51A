@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523201436) do
+ActiveRecord::Schema.define(:version => 20130526031730) do
 
   create_table "bands", :force => true do |t|
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "style_id"
   end
 
   create_table "concerts", :force => true do |t|
@@ -24,24 +25,32 @@ ActiveRecord::Schema.define(:version => 20130523201436) do
     t.date     "hora_fin"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "local_id"
+    t.integer  "band_id"
+  end
+
+  create_table "districts", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "locals", :force => true do |t|
     t.string   "nombre"
     t.string   "direccion"
-    t.string   "distrito"
     t.string   "di_google_maps"
     t.string   "telefono"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "district_id"
     t.float    "latitude"
     t.float    "longitude"
   end
 
   create_table "styles", :force => true do |t|
-    t.string   "descripccion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
