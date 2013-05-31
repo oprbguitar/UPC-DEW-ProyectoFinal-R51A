@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(:version => 20130526031730) do
     t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "style_id"
   end
 
   create_table "concerts", :force => true do |t|
