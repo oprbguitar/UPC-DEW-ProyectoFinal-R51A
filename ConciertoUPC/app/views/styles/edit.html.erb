@@ -1,25 +1,6 @@
-
-<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
-    <span>CONCIERTOS</span>
-</div>
-
-<div class="ui-panel-body">
-
-<h1>Editar Estilos</h1>
+<h1>Editing style</h1>
 
 <%= render 'form' %>
-<div class="actions">
-			<table align = "center">
-				<tr>
-					<td>
-                      <%= link_to 'Visualizar', @style, :class => "ui-button ui-widget ui-state-default", :method => :get %> 
-                      </td>
-					<td>
-                       <%= link_to 'Back', styles_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-                       	</td>
-				</tr>
-			</table>	
-		</div>
 
-
-</div>
+<%= link_to 'Show', @style %> |
+<%= link_to 'Back', styles_path %>

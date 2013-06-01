@@ -1,12 +1,5 @@
-<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
-<h3>En esta página se registran los estilos de las bandas musicales</h3>
-<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
-    <span>ESTILOS</span>
-</div>
+<h1>Listing styles</h1>
 
-<div class="ui-panel-body">
-
-<h1>Lista de Estilos</h1>
 <table>
   <tr>
     <th>Nombre</th>
@@ -18,16 +11,13 @@
 <% @styles.each do |style| %>
   <tr>
     <td><%= style.nombre %></td>
-    <td><%= link_to 'Consultar', style, :class => "ui-button ui-widget ui-state-default", :method => :get %></td>
-    <td><%= link_to 'Editar', edit_style_path(style) , :class => "ui-button ui-widget ui-state-default", :method => :get %></td>
-    <td><%= link_to 'Eliminar', style,:class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', style %></td>
+    <td><%= link_to 'Edit', edit_style_path(style) %></td>
+    <td><%= link_to 'Destroy', style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-<div class="actions">
-<%= link_to 'Nuevo estilo', new_style_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-</div>
 
-</div>
+<%= link_to 'New Style', new_style_path %>
