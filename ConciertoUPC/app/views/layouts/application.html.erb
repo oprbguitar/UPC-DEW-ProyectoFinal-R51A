@@ -4,24 +4,20 @@
   <title>Conciertos - UPC</title>
   <%= stylesheet_link_tag    "default", :media => "all" %>
   <%= stylesheet_link_tag    "custom-theme/skin", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<nav class='navbar'>
-       <div class='navbar-inner'>
-       	<ul class='nav'>
+        <ul id="menu-bar">
            <li><%= link_to 'Bands', bands_path %></li>
            <li><%= link_to 'Concerts', concerts_path %></li>
            <li><%= link_to 'Locals', locals_path %></li>
            <li><%= link_to 'Styles', styles_path %></li>
            <li><%= link_to 'Users', users_path %></li>
         </ul>
-       </div>
-	</nav>
-
 <%= yield %>
-
+<div id="footer">
+</div><!-- #footer -->
 </body>
 </html>
