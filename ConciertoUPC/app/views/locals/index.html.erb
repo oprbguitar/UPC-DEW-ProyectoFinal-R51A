@@ -10,41 +10,51 @@
 
 <h1>Listar Locales</h1>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Direccion</th>
-    <th>Distrito</th>
-    <th>Di google maps</th>
-    <th>Telefono</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui-datatable-scrollable-header">
 
-<% @locals.each do |local| %>
-  <tr>
-    <td><%= local.nombre %></td>
-    <td><%= local.direccion %></td>
-    <td><%= local.districts.name %></td>
-    <td><%= local.di_google_maps %></td>
-    <td><%= local.telefono %></td>
+    <table class="ui-state-default" width="100%">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Distrito</th>
+            <th>Di google maps</th>
+            <th>Telefono</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+    </table>
 
-        <td>
-            <%= button_to "Consultar", local, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-            <%= button_to "Editar", edit_local_path(local) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-          
-            <%= button_to "Eliminar", local , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+    <table class="ui-datatable-data" width="100%">
+        <tbody>
+          <% @locals.each do |local| %>
 
-        </td>
+          <tr>
+            <td><%= local.nombre %></td>
+            <td><%= local.direccion %></td>
+            <td><%= local.districts.name %></td>
+            <td><%= local.di_google_maps %></td>
+            <td><%= local.telefono %></td>
 
-  </tr>
-<% end %>
-</table>
+                <td>
+                    <%= button_to "Consultar", local, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                </td>
+                <td>
+                    <%= button_to "Editar", edit_local_path(local) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                </td>
+                <td>
+                  
+                    <%= button_to "Eliminar", local , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                </td>
+
+          </tr>
+        <% end %>
+    </tbody>
+    </table>
+</div>
 
 <br />
 

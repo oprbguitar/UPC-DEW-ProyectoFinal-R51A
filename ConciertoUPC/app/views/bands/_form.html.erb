@@ -23,8 +23,6 @@
 		Style.all, :id, :nombre, :prompt => true %>
   </div>
 
-  
-    <%= button_to "Grabar", :class => "ui-button ui-widget ui-state-default", :method => :get , :form => { "data-type" => "json" }  %>
-        
+  <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    
 
 <% end %>

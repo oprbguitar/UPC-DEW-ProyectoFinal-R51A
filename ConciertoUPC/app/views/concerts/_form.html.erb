@@ -32,8 +32,8 @@
     <%= f.label :hora_fin %><br />
     <%= f.date_select :hora_fin %>
   </div>
-
-  <%= button_to "Grabar", :class => "ui-button ui-widget ui-state-default", :method => :get , :form => { "data-type" => "json" }  %>
   
+  <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    
+
 <% end %>
 

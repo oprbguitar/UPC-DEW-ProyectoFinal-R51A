@@ -9,37 +9,45 @@
 
 <h1>Lista de Conciertos</h1>
 
-<table>
-  <tr>
-    <th>Hora ini</th>
-    <th>Hora fin</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui-datatable-scrollable-header">
 
-<% @concerts.each do |concert| %>
-  <tr>
-    <td><%= concert.hora_ini %></td>
-    <td><%= concert.hora_fin %></td>
+    <table class="ui-state-default" width="100%">
+        <thead>
+          <tr>
+            <th>Hora ini</th>
+            <th>Hora fin</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>  
+    </table>
 
-    <td>
-            <%= button_to "Consultar", concert, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-            <%= button_to "Editar", edit_concert_path(concert) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-          
-            <%= button_to "Eliminar", concert , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+    <table class="ui-datatable-data" width="100%">
+        <tbody>
+            <% @concerts.each do |concert| %>
+              <tr>
+                <td><%= concert.hora_ini %></td>
+                <td><%= concert.hora_fin %></td>
 
-        </td>
+                <td>
+                        <%= button_to "Consultar", concert, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                        <%= button_to "Editar", edit_concert_path(concert) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                      
+                        <%= button_to "Eliminar", concert , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
 
-    
-  </tr>
-<% end %>
-</table>
+                    </td>
 
+                
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
 <br />
 
 <div class="actions">

@@ -9,33 +9,41 @@
 
     <h1>Lista de Bandas</h1>
 
-    <table>
-      <tr>
-        <th>Nombre</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+<div class="ui-datatable-scrollable-header">
 
-    <% @bands.each do |band| %>
-      <tr>
-        <td><%= band.nombre %></td>
-
-        <td>
-            <%= button_to "Consultar", band, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-            <%= button_to "Editar", edit_band_path(band) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-          
-            <%= button_to "Eliminar", band , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
-
-        </td>
-      </tr>
-    <% end %>
+    <table class="ui-state-default" width="100%">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>  
     </table>
 
+    <table class="ui-datatable-data" width="100%">
+        <tbody>
+            <% @bands.each do |band| %>
+              <tr>
+                <td><%= band.nombre %></td>
+
+                <td>
+                    <%= button_to "Consultar", band, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                </td>
+                <td>
+                    <%= button_to "Editar", edit_band_path(band) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                </td>
+                <td>
+                  
+                    <%= button_to "Eliminar", band , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
     <br />
 
 </div>

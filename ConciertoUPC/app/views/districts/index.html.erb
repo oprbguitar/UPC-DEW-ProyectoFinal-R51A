@@ -9,33 +9,42 @@
 
 <h1>Lista de Distritos</h1>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui-datatable-scrollable-header">
 
-<% @districts.each do |district| %>
-  <tr>
-    <td><%= district.nombre %></td>
+    <table class="ui-state-default" width="100%">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>  
+    </table>
 
-       <td>
-            <%= button_to "Consultar", district, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-            <%= button_to "Editar", edit_district_path(district) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
-        </td>
-        <td>
-          
-            <%= button_to "Eliminar", district , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+    <table class="ui-datatable-data" width="100%">
+        <tbody>
 
-        </td>
+            <% @districts.each do |district| %>
+              <tr>
+                <td><%= district.nombre %></td>
 
-  </tr>
-<% end %>
-</table>
+                   <td>
+                        <%= button_to "Consultar", district, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                        <%= button_to "Editar", edit_district_path(district) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                      
+                        <%= button_to "Eliminar", district , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                    </td>
+
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
 
 <br />
 
