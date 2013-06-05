@@ -1,4 +1,8 @@
 class BandsController < ApplicationController
+  
+  def add_member
+    @band = Band.find(params[:id])
+  end 
   # GET /bands
   # GET /bands.json
   def index

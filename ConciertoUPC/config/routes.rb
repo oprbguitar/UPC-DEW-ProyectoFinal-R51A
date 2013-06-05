@@ -5,8 +5,11 @@ ConciertoUPC::Application.routes.draw do
   resources :users
 
 
-  resources :bands
-
+  resources :bands do
+    member do
+      get "add_member"
+    end
+  end
 
   resources :styles
 

@@ -24,6 +24,9 @@
 			<td>
 				<%= button_to "Atrás", bands_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
 			</td>
+			<td>
+				<%= button_to "Agregar integrante", add_member_band_path(@band), :class => "ui-button ui-widget ui-state-default", :method => :get %>	
+			</td>
 		</tr>
 	</table>	
 </div>

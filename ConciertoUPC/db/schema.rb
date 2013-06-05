@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526031730) do
+ActiveRecord::Schema.define(:version => 20130605210647) do
+
+  create_table "band_members", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "bands", :force => true do |t|
     t.string   "nombre"
@@ -27,6 +32,12 @@ ActiveRecord::Schema.define(:version => 20130526031730) do
     t.datetime "updated_at", :null => false
     t.integer  "local_id"
     t.integer  "band_id"
+  end
+
+  create_table "concurrences", :force => true do |t|
+    t.integer  "es_asistencia"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "districts", :force => true do |t|
