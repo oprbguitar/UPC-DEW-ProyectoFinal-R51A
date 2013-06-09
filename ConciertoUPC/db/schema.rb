@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608170401) do
+ActiveRecord::Schema.define(:version => 20130608003944) do
 
   create_table "band_members", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -24,26 +24,6 @@ ActiveRecord::Schema.define(:version => 20130608170401) do
     t.datetime "updated_at", :null => false
     t.integer  "style_id"
   end
-
-  create_table "comentarios", :force => true do |t|
-    t.text     "content"
-    t.integer  "rate"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "concert_id"
-  end
-
-  create_table "comments", :force => true do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "concert_id"
-    t.integer  "points"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "comments", ["concert_id"], :name => "index_comments_on_concert_id"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "concerts", :force => true do |t|
     t.date     "hora_ini"

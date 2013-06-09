@@ -1,6 +1,5 @@
 ConciertoUPC::Application.routes.draw do
   
-  resources :comentarios
   resources :districts
   resources :users
   resources :bands do
@@ -12,7 +11,7 @@ ConciertoUPC::Application.routes.draw do
   resources :styles
   resources :locals
   resources :concerts
-  root :to => 'comentarios#index'
+  root :to => 'locals#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
