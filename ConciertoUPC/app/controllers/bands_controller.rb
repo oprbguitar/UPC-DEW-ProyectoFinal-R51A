@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
   
-  def add_member
+  def add_user
     @band = Band.find(params[:id])
   end 
   # GET /bands

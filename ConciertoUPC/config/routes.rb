@@ -1,17 +1,24 @@
 ConciertoUPC::Application.routes.draw do
-  
   resources :districts
+
+
   resources :users
+
+
   resources :bands do
     member do
-      get "add_member"
+      get "add_user"
     end
   end
 
   resources :styles
+
+
   resources :locals
+
+
   resources :concerts
-  root :to => 'locals#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,7 +69,7 @@ ConciertoUPC::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- 
+  root :to => 'locals#index'
 
   # See how all your routes lay out with "rake routes"
 
