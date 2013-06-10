@@ -19,7 +19,14 @@ ConciertoUPC::Application.routes.draw do
 
   resources :concerts
 
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
 
+  resources :locals do
+    resources :reviews
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
