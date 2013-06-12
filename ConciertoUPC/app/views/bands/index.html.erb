@@ -26,7 +26,7 @@
         <tbody>
             <% @bands.each do |band| %>
               <tr>
-                <td><%= band.nombre %></td>
+                <td><%= band.name %></td>
 
                 <td>
                     <%= button_to "Consultar", band, :class => "ui-button ui-widget ui-state-default", :method => :get %>

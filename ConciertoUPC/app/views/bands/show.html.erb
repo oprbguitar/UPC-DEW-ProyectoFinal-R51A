@@ -12,8 +12,20 @@
 
 <p>
   <b>Nombre:</b>
-  <%= @band.nombre %>
+  <%= @band.name %>
 </p>
+
+<table>
+
+  <% @band.users.each do |user| %>
+     <tr>
+     	<td>
+     	  <%= user.name %>	
+     	</td>
+     </tr>
+  <% end %>
+
+</table>
 
 <div class="actions">
 	<table align = "center">

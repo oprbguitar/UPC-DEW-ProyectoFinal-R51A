@@ -21,16 +21,21 @@
   <div class="field">
     <%= f.label :band %><br />
     <%= f.collection_select :band_id,
-    Band.all, :id, :nombre, :prompt => true %>
+    Band.all, :id, :name, :prompt => true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
   </div>
 
   <div class="field">
     <%= f.label :hora_ini %><br />
-    <%= f.date_select :hora_ini %>
+    <%= f.time_select :hora_ini %>
   </div>
   <div class="field">
     <%= f.label :hora_fin %><br />
-    <%= f.date_select :hora_fin %>
+    <%= f.time_select :hora_fin %>
   </div>
   
   <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    

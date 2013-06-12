@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610182707) do
+ActiveRecord::Schema.define(:version => 20130611192258) do
 
   create_table "band_users", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -21,19 +21,20 @@ ActiveRecord::Schema.define(:version => 20130610182707) do
   end
 
   create_table "bands", :force => true do |t|
-    t.string   "nombre"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "style_id"
+    t.string   "name"
   end
 
   create_table "concerts", :force => true do |t|
-    t.date     "hora_ini"
-    t.date     "hora_fin"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "local_id"
     t.integer  "band_id"
+    t.time     "hora_fin"
+    t.time     "hora_ini"
+    t.date     "fecha"
   end
 
   create_table "concurrences", :force => true do |t|
@@ -68,20 +69,15 @@ ActiveRecord::Schema.define(:version => 20130610182707) do
 
   create_table "users", :force => true do |t|
     t.integer  "ti_persona"
-    t.string   "prenombre"
     t.string   "ap_paterno"
     t.string   "ap_materno"
     t.integer  "sexo"
     t.integer  "ti_doc_ident"
     t.string   "nu_doc_ident"
     t.string   "email"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.string   "provider"
-    t.string   "uid"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
   end
 
 end

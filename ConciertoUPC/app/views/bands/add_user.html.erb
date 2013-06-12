@@ -1,7 +1,8 @@
 
-<h2> Bienvenido, <%= @band.nombre %> </h2>
-<%= simple_form_for @band do |f| %>
-  <%= f.association :users, :as => "check_boxes" %> <br/>
+<h2> Bienvenido, <%= @band.name %> </h2>
+  
+<%= simple_form_for(@band) do |f| %>
+	<%= f.association :users, :as => "check_boxes" %> <br /> 
   <%= f.button :submit %>
-
 <% end %>
+

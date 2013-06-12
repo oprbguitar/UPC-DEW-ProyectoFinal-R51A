@@ -1,16 +1,7 @@
 ConciertoUPC::Application.routes.draw do
-  #Facebook
-  get '/auth/facebook/callback' => 'facebook#create'
-  get 'auth/failure' => 'facebook#failure'
-  get 'facebook'  => 'facebook#index', as: :facebook
-  resources :main
-  resources :facebook
-  root to: 'main#index'
-  #*************************************
-
   resources :districts
 
-  resources :users
+  resources :band_users
 
   resources :bands do
     member do
@@ -18,12 +9,17 @@ ConciertoUPC::Application.routes.draw do
     end
   end
 
+  resources :users
+
   resources :styles
+
 
   resources :locals
 
-  resources :concerts  
-  
+
+  resources :concerts
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -73,7 +69,7 @@ ConciertoUPC::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  #root :to => 'locals#index'
+  root :to => 'locals#index'
 
   # See how all your routes lay out with "rake routes"
 
