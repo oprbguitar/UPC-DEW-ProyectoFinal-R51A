@@ -1,4 +1,5 @@
 class LocalsController < ApplicationController
+  before_filter :require_login
   # GET /locals
   # GET /locals.json
   def index

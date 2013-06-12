@@ -1,4 +1,5 @@
 class BandsController < ApplicationController
+  before_filter :require_login
   
   def add_user
     @band = Band.find(params[:id])

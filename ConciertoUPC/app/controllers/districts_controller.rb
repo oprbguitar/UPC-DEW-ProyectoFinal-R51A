@@ -1,4 +1,5 @@
 class DistrictsController < ApplicationController
+  before_filter :require_login
   # GET /districts
   # GET /districts.json
   def index

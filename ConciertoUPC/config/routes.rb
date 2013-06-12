@@ -1,6 +1,12 @@
 ConciertoUPC::Application.routes.draw do
-  resources :comments
+  get "sessions/new"
+  get "sessions/create"
+  get "sessions/destroy"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "login" => "sessions#new", :as => "login"
+  get "signup" => "users#new", :as => "signup"
 
+  resources :comments
 
   resources :districts
 
@@ -16,11 +22,11 @@ ConciertoUPC::Application.routes.draw do
 
   resources :styles
 
-
   resources :locals
 
-
   resources :concerts
+
+  resources :sessions
 
 
   # The priority is based upon order of creation:
@@ -72,7 +78,7 @@ ConciertoUPC::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'comments#index'
+  root :to => 'users#index'
 
   # See how all your routes lay out with "rake routes"
 

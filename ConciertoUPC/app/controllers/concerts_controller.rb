@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+  before_filter :require_login
   # GET /concerts
   # GET /concerts.json
   def index

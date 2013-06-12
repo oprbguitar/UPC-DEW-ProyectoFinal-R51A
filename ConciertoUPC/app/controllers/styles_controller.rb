@@ -1,4 +1,5 @@
 class StylesController < ApplicationController
+  before_filter :require_login
   # GET /styles
   # GET /styles.json
   def index

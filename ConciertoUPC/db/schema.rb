@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612060432) do
+ActiveRecord::Schema.define(:version => 20130612210204) do
 
   create_table "band_users", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -77,16 +77,18 @@ ActiveRecord::Schema.define(:version => 20130612060432) do
   end
 
   create_table "users", :force => true do |t|
-    t.integer  "ti_persona"
-    t.string   "ap_paterno"
-    t.string   "ap_materno"
-    t.integer  "sexo"
-    t.integer  "ti_doc_ident"
-    t.string   "nu_doc_ident"
+    t.string   "username",         :null => false
     t.string   "email"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "name"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "nombre"
+    t.string   "appaterno"
+    t.string   "apmaterno"
+    t.string   "sexo"
+    t.string   "tidocident"
+    t.integer  "nudocident"
   end
 
 end
