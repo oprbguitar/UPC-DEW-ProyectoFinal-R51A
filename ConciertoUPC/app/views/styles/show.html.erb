@@ -1,10 +1,27 @@
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>ESTILO</span>
+</div>
+
+<div class="ui-panel-body">
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Nombre:</b>
   <%= @style.nombre %>
 </p>
+<div class="actions">
+	<table align = "center">
+		<tr>
+			<td>
+				<%= button_to "Editar", edit_style_path(@style), :class => "ui-button ui-widget ui-state-default", :method => :get %>		
+			</td>
+			<td>
+				<%= button_to "Atrás", styles_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+			</td>
+		</tr>
+	</table>	
+</div>
 
-
-<%= link_to 'Edit', edit_style_path(@style) %> |
-<%= link_to 'Back', styles_path %>

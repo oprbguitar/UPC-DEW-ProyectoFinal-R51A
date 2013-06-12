@@ -1,5 +1,18 @@
-<h1>New style</h1>
+<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>ESTILOS</span>
+</div>
+
+<div class="ui-panel-body">
+<h1>Nuevo estilo</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', styles_path %>
+	<table align = "center">
+		<tr>
+			<td>
+				<%= button_to "Atrás", styles_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+			</td>
+		</tr>
+	</table>

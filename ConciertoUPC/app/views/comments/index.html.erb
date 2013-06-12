@@ -1,0 +1,55 @@
+<div class="ui-panel ui-corner-all" style="width: 1000px; margin: 0px auto">
+
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>COMENTARIOS</span>
+</div>
+
+<div class="ui-panel-body">
+
+<h1>Lista de comentarios</h1>
+<div class="ui-datatable-scrollable-header">
+
+  <table class="ui-state-default" width="100%">
+    <thead>
+    <tr>
+    <th>Concert</th>
+    <th>Content</th>
+    <th>Ratio</th>
+    </thead>  
+  </table>
+
+  <table class="ui-datatable-data" width="100%">
+    <tbody>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.concert_id %></td>
+    <td><%= comment.content %></td>
+    <td><%= comment.ratio %></td>
+    <td>
+                        <%= button_to "Consultar", comment, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                        <%= button_to "Editar", edit_comment_path(comment) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                      
+                        <%= button_to "Eliminar", comment , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                    </td>
+
+                 </tr>
+            <% end %>
+        </tbody>
+    </table>
+
+<br />
+
+
+<div class="actions">
+
+  <%= button_to "Nuevo", new_comment_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>
+
+</div>

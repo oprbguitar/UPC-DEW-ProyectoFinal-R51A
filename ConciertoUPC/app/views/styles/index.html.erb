@@ -1,23 +1,54 @@
-<h1>Listing styles</h1>
+<div class="ui-panel ui-corner-all" style="width: 900px; margin: 0px auto">
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>ESTILOS</span>
+</div>
+
+<div class="ui-panel-body">
+<h1>Listado de estilos</h1>
+<div class="ui-datatable-scrollable-header">
+
+    <table class="ui-state-default" width="100%">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>  
+    </table>
+
+    <table class="ui-datatable-data" width="100%">
+        <tbody>
 
 <% @styles.each do |style| %>
   <tr>
     <td><%= style.nombre %></td>
-    <td><%= link_to 'Show', style %></td>
-    <td><%= link_to 'Edit', edit_style_path(style) %></td>
-    <td><%= link_to 'Destroy', style, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <td>
+                        <%= button_to "Consultar", style, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                        <%= button_to "Editar", edit_style_path(style) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                      
+                        <%= button_to "Eliminar", style , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                    </td>
+
+              </tr>
+            <% end %>
+        </tbody>
+    </table>
 
 <br />
 
-<%= link_to 'New Style', new_style_path %>
+
+<div class="actions">
+
+  <%= button_to "Nuevo", new_style_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>
+
+</div>

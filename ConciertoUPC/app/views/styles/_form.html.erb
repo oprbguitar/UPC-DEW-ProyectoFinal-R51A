@@ -1,21 +1,10 @@
-<%= form_for(@style) do |f| %>
-  <% if @style.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@style.errors.count, "error") %> prohibited this style from being saved:</h2>
+<%= simple_form_for(@style) do |f| %>
+ <%= f.error_notification %>
 
-      <ul>
-      <% @style.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br />
-    <%= f.text_field :nombre %>
+  <div class="form-inputs">
+    <%= f.input :nombre %>
   </div>
-
+  
   <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    
 
 <% end %>

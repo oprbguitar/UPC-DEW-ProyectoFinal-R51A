@@ -1,4 +1,7 @@
 ConciertoUPC::Application.routes.draw do
+  resources :comments
+
+
   resources :districts
 
   resources :band_users
@@ -69,7 +72,7 @@ ConciertoUPC::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'locals#index'
+  root :to => 'comments#index'
 
   # See how all your routes lay out with "rake routes"
 

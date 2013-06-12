@@ -1,20 +1,30 @@
-<h1>Listing users</h1>
+<div class="ui-panel ui-corner-all" style="width: 900px; margin: 0px auto">
 
+<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+    <span>USUARIOS</span>
+</div>
 
-<table>
-  <tr>
+<div class="ui-panel-body">
+
+<h1>Listando usuarios</h1>
+<div class="ui-datatable-scrollable-header">
+
+  <table class="ui-state-default" width="100%">
+    <thead>
+    <tr>
     <th>Ti persona</th>
-    <th>Prenombre</th>
+    <th>Nombre</th>
     <th>Ap paterno</th>
     <th>Ap materno</th>
     <th>Sexo</th>
     <th>Ti doc ident</th>
     <th>Nu doc ident</th>
     <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  </thead>  
+  </table>
+
+  <table class="ui-datatable-data" width="100%">
+    <tbody>
 
 <% @users.each do |user| %>
   <tr>
@@ -26,13 +36,30 @@
     <td><%= user.ti_doc_ident %></td>
     <td><%= user.nu_doc_ident %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+    <td>
+                        <%= button_to "Consultar", user, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                        <%= button_to "Editar", edit_user_path(user) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
+                    </td>
+                    <td>
+                      
+                        <%= button_to "Eliminar", user , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                    </td>
+
+                 </tr>
+            <% end %>
+        </tbody>
+    </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+
+<div class="actions">
+
+  <%= button_to "Nuevo", new_user_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
+
+</div>
+
+</div>

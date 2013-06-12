@@ -1,5 +1,5 @@
 
-<div class="ui-panel ui-corner-all" style="width: 600px; margin: 0px auto">
+<div class="ui-panel ui-corner-all" style="width: 950px; margin: 0px auto">
 
 <div class="ui-panel-titlebar ui-widget-header ui-corner-all">
     <span>CONCIERTOS</span>
@@ -14,11 +14,9 @@
     <table class="ui-state-default" width="100%">
         <thead>
           <tr>
+            <th>Evento</th>
             <th>Hora ini</th>
             <th>Hora fin</th>
-            <th></th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>  
     </table>
@@ -27,6 +25,7 @@
         <tbody>
             <% @concerts.each do |concert| %>
               <tr>
+                <td><%= concert.name %></td>
                 <td><%= concert.hora_ini %></td>
                 <td><%= concert.hora_fin %></td>
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130611192258) do
+ActiveRecord::Schema.define(:version => 20130612060432) do
 
   create_table "band_users", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20130611192258) do
     t.string   "name"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "concert_id"
+    t.text     "content"
+    t.integer  "ratio"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "concerts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -35,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130611192258) do
     t.time     "hora_fin"
     t.time     "hora_ini"
     t.date     "fecha"
+    t.string   "name"
   end
 
   create_table "concurrences", :force => true do |t|

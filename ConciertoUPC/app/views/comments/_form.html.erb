@@ -1,0 +1,12 @@
+<%= simple_form_for(@comment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :concert, :include_blank => false %>
+    <%= f.input :content %>
+    <%= f.input :ratio, :collection => 1..5, :as => :radio_buttons %>
+  </div>
+
+ <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %> 
+ 
+<% end %>

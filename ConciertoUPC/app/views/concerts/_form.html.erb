@@ -11,7 +11,12 @@
       </ul>
     </div>
   <% end %>
-  
+
+  <div class="field">
+    <%= f.label :Evento %><br />
+    <%= f.text_field :name %>
+  </div>
+
   <div class="field">
     <%= f.label :local %><br />
     <%= f.collection_select :local_id,
