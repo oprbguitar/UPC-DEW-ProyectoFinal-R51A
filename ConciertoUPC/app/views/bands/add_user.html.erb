@@ -1,8 +1,22 @@
+<div class="ui-panel ui-corner-all" style="width: 400px; margin: 0px auto">
 
-<h2> Bienvenido, <%= @band.name %> </h2>
-  
-<%= simple_form_for(@band) do |f| %>
-	<%= f.association :users, :as => "check_boxes" %> <br /> 
-  <%= f.button :submit %>
-<% end %>
+	<div class="ui-panel-titlebar ui-widget-header ui-corner-all">
+	    <span>BANDAS MUSICALES</span>
+	</div>
 
+	<div class="ui-panel-body">
+		<h1> Integrantes de <%= @band.name %> </h1>
+		  
+		<%= simple_form_for(@band) do |f| %>
+
+		    <tr>
+		     	<td>
+		     	  <%= f.association :users, :as => "check_boxes" %> <br /> 
+		     	</td>
+		    </tr>
+
+			<%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    
+		<% end %>
+	</div>	
+
+</div>

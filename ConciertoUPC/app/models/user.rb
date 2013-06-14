@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
-  attr_accessible :username, :nombre, :appaterno, :apmaterno, :sexo, :tidocident, :nudocident, :email, :password, :password_confirmation
- 
+  attr_accessible :username, :name, :appaterno, :apmaterno, :sexo, :tidocident, :nudocident, :email, :password, :password_confirmation
+
   validates :appaterno, :presence => { :message => ": Se requiere el Apellido Paterno" }  
   validates :apmaterno, :presence => { :message => ": Se requiere el Apellido Materno" }    
-  validates :nombre, :presence => { :message => ": Se requiere el Nombre" }      
+  validates :name, :presence => { :message => ": Se requiere el Nombre" }      
   validates :sexo, :presence => { :message => ": Se requiere su sexo" }   
   validates :nudocident, :presence => { :message => ": Ingrese el numero de su documento" }      
   validates :password, :presence => { :message => ": Ingrese contrasena" }      

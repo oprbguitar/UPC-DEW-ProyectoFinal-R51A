@@ -9,4 +9,5 @@ class Concert < ActiveRecord::Base
   validates :hora_fin, :presence => { :message => ": Se requiere la hora de finalizacion" }  
   validates :hora_ini, :presence => { :message => ": Se requiere la hora de inicio" }  
   validates :fecha, :presence => { :message => ": Se requiere la fecha" }  
+
 end

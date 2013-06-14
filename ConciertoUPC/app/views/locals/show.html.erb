@@ -1,6 +1,6 @@
 
 
-<div class="ui-panel ui-corner-all" style="width: 900px; margin: 0px auto">
+<div class="ui-panel ui-corner-all" style="width: 650px; margin: 0px auto">
 
 <div class="ui-panel-titlebar ui-widget-header ui-corner-all">
     <span>LOCALES</span>
@@ -22,22 +22,12 @@
 </p>
 
 <p>
-  <b>Distrito:</b>
-  <%= @local.districts.name %>
-</p>
-
-<p>
-  <b>Di google maps:</b>
-  <%= @local.di_google_maps %>
-</p>
-
-<p>
   <b>Telefono:</b>
   <%= @local.telefono %>
 </p>
 
 <p>
-  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=600x450&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x350&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
 </p>
 
 

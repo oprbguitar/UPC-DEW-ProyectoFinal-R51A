@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612210204) do
+ActiveRecord::Schema.define(:version => 20130613160000) do
 
   create_table "band_users", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -83,12 +83,12 @@ ActiveRecord::Schema.define(:version => 20130612210204) do
     t.string   "salt"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-    t.string   "nombre"
     t.string   "appaterno"
     t.string   "apmaterno"
     t.string   "sexo"
     t.string   "tidocident"
     t.integer  "nudocident"
+    t.string   "name"
   end
 
 end

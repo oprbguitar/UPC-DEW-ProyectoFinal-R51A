@@ -15,8 +15,11 @@
         <thead>
           <tr>
             <th>Evento</th>
-            <th>Hora ini</th>
-            <th>Hora fin</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th></th>
+            <th>Mantenimiento</th>
+            <th></th>
           </tr>
         </thead>  
     </table>
@@ -26,9 +29,9 @@
             <% @concerts.each do |concert| %>
               <tr>
                 <td><%= concert.name %></td>
+                <td><%= concert.fecha %></td>
                 <td><%= concert.hora_ini %></td>
-                <td><%= concert.hora_fin %></td>
-
+                
                 <td>
                         <%= button_to "Consultar", concert, :class => "ui-button ui-widget ui-state-default", :method => :get %>
                     </td>

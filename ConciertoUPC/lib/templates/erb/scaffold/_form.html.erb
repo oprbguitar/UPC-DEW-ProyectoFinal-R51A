@@ -3,8 +3,13 @@
 
   <div class="form-inputs">
   <%- attributes.each do |attribute| -%>
-    <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+     <tr>
+     	<td>
+     	  <%%= f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %> %>
+     	</td>
+     </tr>
   <%- end -%>
+
   </div>
 
   <div class="form-actions">
