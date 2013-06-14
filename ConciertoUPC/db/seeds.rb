@@ -5,3 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+ Style.create(nombre: 'balada')
+ Style.create(nombre: 'chicha')
+ Style.create(nombre: 'Clasico')
+ Style.create(nombre: 'huayno')
+ Style.create(nombre: 'Jazz')
+ Style.create(nombre: 'Metal')
+ Style.create(nombre: 'rock')
+ Style.create(nombre: 'salsa')
+ Style.create(nombre: 'reggeaton')
+
+
+ 
+ 
+ 

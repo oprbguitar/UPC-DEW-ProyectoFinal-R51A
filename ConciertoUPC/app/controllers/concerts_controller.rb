@@ -3,8 +3,11 @@ class ConcertsController < ApplicationController
   # GET /concerts
   # GET /concerts.json
   def index
-    @concerts = Concert.all
-
+    @q = Concert.search(params[:q])
+    @concerts = @q.result
+    @q.build_condition if @q.conditions.empty?
+    @q.build_sort if @q.sorts.empty?
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @concerts }
@@ -80,5 +83,13 @@ class ConcertsController < ApplicationController
       format.html { redirect_to concerts_url }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    @q = Concert.search(params[:q])
+    @concerts = @q.result
+    @q.build_condition if @q.conditions.empty?
+    @q.build_sort if @q.sorts.empty?
+     
   end
 end

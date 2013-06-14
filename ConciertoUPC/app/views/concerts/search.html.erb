@@ -1,0 +1,29 @@
+<h1>Conciertos</h1>
+<%= search_form_for @q, url: search_concerts_path, method: :post do |f| %>
+<%= f.condition_fields do |c| %>
+  <%= render "condition_fields", f: c %>
+ <% end %>
+ <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+ <div class="field">
+     Sort:
+     <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+     <% end %>
+   </div>
+<div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+<table id="concerts">
+  <tr>
+    <th><%= sort_link @q, :name, "Evento" %></th>
+    <th><%= sort_link @q, :fecha, "Fecha" %></th>
+    <th><%= sort_link @q, :hora_ini, "Hora" %></th>
+  </tr>
+
+ <% @concerts.each do |concert| %>
+  <tr>
+    <td><%= concert.name %></td>
+    <td><%= concert.fecha %></td>
+    <td><%= concert.hora_ini %></td>
+  </tr>
+<% end %>
+</table>

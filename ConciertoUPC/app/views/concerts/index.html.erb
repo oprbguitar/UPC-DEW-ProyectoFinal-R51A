@@ -1,4 +1,3 @@
-
 <div class="ui-panel ui-corner-all" style="width: 950px; margin: 0px auto">
 
 <div class="ui-panel-titlebar ui-widget-header ui-corner-all">
@@ -8,15 +7,27 @@
 <div class="ui-panel-body">
 
 <h1>Lista de Conciertos</h1>
-
+<%= search_form_for @q, url: search_concerts_path, method: :post do |f| %>
+ <%= f.condition_fields do |c| %>
+  <%= render "condition_fields", f: c %>
+   <% end %>
+   <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+   <div class="field">
+     Sort:
+     <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+     <% end %>
+   </div>
+<div class="actions"><%= f.submit "Search" %></div>
+<% end %>
 <div class="ui-datatable-scrollable-header">
 
     <table class="ui-state-default" width="100%">
         <thead>
           <tr>
-            <th>Evento</th>
-            <th>Fecha</th>
-            <th>Hora</th>
+            <th><%= sort_link @q, :name, "Evento" %></th>
+            <th><%= sort_link @q, :fecha, "Fecha" %></th>
+            <th><%= sort_link @q, :hora_ini, "Hora" %></th>
             <th></th>
             <th>Mantenimiento</th>
             <th></th>

@@ -24,8 +24,9 @@ ConciertoUPC::Application.routes.draw do
 
   resources :locals
 
-  resources :concerts
-
+  resources :concerts do
+    collection { post :search, to: 'concerts#search'}
+  end
   resources :sessions
 
 
