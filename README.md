@@ -23,5 +23,9 @@ Scrumy Link
 
 https://trello.com/board/proyecto-web/518e8f9ceb041a8d440007fc
 
+Presentación:
+
+https://docs.google.com/presentation/d/1pmOzu5kz5443eLR-S5lJSdlEeh9HMjrUdjTza4oCZUg/edit#slide=id.ge160742e_049
+
 Github
 
