@@ -5,7 +5,10 @@
   <%= stylesheet_link_tag    "default", :media => "all" %>
   <%= stylesheet_link_tag    "custom-theme/skin", :media => "all" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  
+  <%= javascript_include_tag "application" %>  
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <!-- modernizr enables HTML5 elements and feature detects -->
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -20,6 +23,8 @@
         </ul>
 
 <%= yield %>
+
+
 
 </body>
 </html>

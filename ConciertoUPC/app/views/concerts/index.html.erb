@@ -11,56 +11,18 @@
  <%= f.condition_fields do |c| %>
   <%= render "condition_fields", f: c %>
    <% end %>
-   <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+   <%= link_to_add_fields "Add Conditions", f, :condition %>
    <div class="field">
      Sort:
      <%= f.sort_fields do |s| %>
       <%= s.sort_select %>
      <% end %>
    </div>
-<div class="actions"><%= f.submit "Search" %></div>
-<% end %>
-<div class="ui-datatable-scrollable-header">
-
-    <table class="ui-state-default" width="100%">
-        <thead>
-          <tr>
-            <th><%= sort_link @q, :name, "Evento" %></th>
-            <th><%= sort_link @q, :fecha, "Fecha" %></th>
-            <th><%= sort_link @q, :hora_ini, "Hora" %></th>
-            <th></th>
-            <th>Mantenimiento</th>
-            <th></th>
-          </tr>
-        </thead>  
-    </table>
-
-    <table class="ui-datatable-data" width="100%">
-        <tbody>
-            <% @concerts.each do |concert| %>
-              <tr>
-                <td><%= concert.name %></td>
-                <td><%= concert.fecha %></td>
-                <td><%= concert.hora_ini %></td>
-                
-                <td>
-                        <%= button_to "Consultar", concert, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-                    </td>
-                    <td>
-                        <%= button_to "Editar", edit_concert_path(concert) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
-                    </td>
-                    <td>
-                      
-                        <%= button_to "Eliminar", concert , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
-
-                    </td>
-
-                
-              </tr>
-            <% end %>
-        </tbody>
-    </table>
+<div class="actions">
+  <%= submit_tag "Search", :class => "ui-button ui-widget ui-state-default" %>    
 </div>
+<% end %>
+
 <br />
 
 <div class="actions">

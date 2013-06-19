@@ -20,7 +20,7 @@
   <div class="field">
     <%= f.label :style %><br />
     <%= f.collection_select :style_id,
-		Style.all, :id, :nombre, :prompt => true %>
+		Style.all, :id, :name, :prompt => true %>
   </div>
 
   <%= submit_tag "Grabar", :class => "ui-button ui-widget ui-state-default" %>    

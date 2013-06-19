@@ -7,7 +7,7 @@ class ConcertsController < ApplicationController
     @concerts = @q.result
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @concerts }
@@ -92,4 +92,6 @@ class ConcertsController < ApplicationController
     @q.build_sort if @q.sorts.empty?
      
   end
+
+ 
 end

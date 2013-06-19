@@ -25,16 +25,17 @@
     <table class="ui-datatable-data" width="100%">
         <tbody>
             <% @bands.each do |band| %>
-              <tr>
-                <td><%= band.name %></td>
+              
+              <tr onclick=>
+                <td><%= band.name%></td>
 
-                <td>
+                <td class="td_sombra">
                     <%= button_to "Consultar", band, :class => "ui-button ui-widget ui-state-default", :method => :get %>
                 </td>
-                <td>
+                <td class="td_sombra">
                     <%= button_to "Editar", edit_band_path(band) , :class => "ui-button ui-widget ui-state-default", :method => :get %>
                 </td>
-                <td>
+                <td class="td_sombra">
                   
                     <%= button_to "Eliminar", band , :class => "ui-button ui-widget ui-state-default", method: :delete, data: { confirm: 'Are you sure?' }%>
 
@@ -49,7 +50,5 @@
 </div>
 
 <div class="actions">
-
   <%= button_to "Nuevo", new_band_path, :class => "ui-button ui-widget ui-state-default", :method => :get %>
-
 </div>
